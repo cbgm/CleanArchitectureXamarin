@@ -19,12 +19,10 @@ namespace CleanArch.Droid.Feature.Start
     [Activity(Label = "CleanArch", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity, IStartView
     {
-        MainPresenter<SynchronizationContext> presenter;
+        MainPresenter presenter;
         RecyclerView RvRepos;
         ReposAdapter Adapter;
         Button button;
-        GetReposUseCase<SynchronizationContext> reposUseCase;
-        IDisposable Disposable;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,8 +32,7 @@ namespace CleanArch.Droid.Feature.Start
 
             using (var scope = App.Container.BeginLifetimeScope())
             {
-                //reposUseCase = scope.Resolve<GetReposUseCase>();
-                presenter = scope.Resolve<MainPresenter<SynchronizationContext>>();
+                presenter = scope.Resolve<MainPresenter>();
             }
 
             presenter.SetUIScheduler(Application.SynchronizationContext);
@@ -55,29 +52,14 @@ namespace CleanArch.Droid.Feature.Start
             button = FindViewById<Button>(Resource.Id.btnLoad);
             button.Click += delegate
             {
-                /*Disposable = reposUseCase
-                    .Get("jetruby")
-                    .SubscribeOn(new TaskPoolScheduler(new TaskFactory()))
-                    .ObserveOn(Application.SynchronizationContext)
-                    .Subscribe(
-                        list => Adapter.addItems(list),
-                        error =>
-                        {
-                            Toast.MakeText(this, ((System.Exception)error).ToString(), ToastLength.Short).Show();
-
-
-                        },
-                        () => { }
-                    );*/
                 presenter.LoadRepo("jetruby");
-
             };
         }
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            //Disposable.Dispose();
+            presenter.OnUnbind();
         }
 
         public void ShowRepo(List<RepoOrganizationEntity> repos)

@@ -33,29 +33,15 @@ namespace CleanArch.Droid
                    .As<IDataSource>();
 
             builder.RegisterType<RepositoryImpl>()
-                   .As<IRepository>();
-
-            /*builder.RegisterType<AppHttpClientHandler>()
-                   .AsSelf();
-
-            builder.Register(c =>
-                             new ApiFactory<ReposApi>(
-                                 c.Resolve<AppHttpClientHandler>()).Create())
-                   .As<ReposApi>();*/
+                   .As<IRepoOrganizationRepository>();
 
             builder.Register(c =>
                              new NetworkModule<ReposApi>().CreateWebService()).As<ReposApi>();
 
-            builder.RegisterType<GetReposUseCase<IScheduler>>()
+            builder.RegisterType<GetReposUseCase>()
                    .AsSelf();
 
-            builder.RegisterType<GetReposUseCase<SynchronizationContext>>()
-                  .AsSelf();
-
-            builder.RegisterType<MainPresenter<IScheduler>>()
-                    .AsSelf();
-
-            builder.RegisterType<MainPresenter<SynchronizationContext>>()
+            builder.RegisterType<MainPresenter>()
                     .AsSelf();
 
             Container = builder.Build();

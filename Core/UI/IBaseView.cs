@@ -3,8 +3,8 @@ namespace Core.UI
 {
     public interface IBaseView
     {
-        void ShowError(Boolean isVisible);
-        void ShowLoading(Boolean isVisible);
-        void ShowContent(Boolean isVisible);
+        void ShowError(bool isVisible);
+        void ShowLoading(bool isVisible);
+        void ShowContent(bool isVisible);
     }
 }

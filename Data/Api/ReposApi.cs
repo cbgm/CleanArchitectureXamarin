@@ -12,7 +12,7 @@ namespace Data.Api
         IObservable<List<RepoOrganization>> FetchRepos(
             [AliasAs("orgName")] string orgName,
             [AliasAs("page")] int page,
-            [AliasAs("per_page")] int per_page
+            [AliasAs("per_page")] int perPage
         );
     }
 

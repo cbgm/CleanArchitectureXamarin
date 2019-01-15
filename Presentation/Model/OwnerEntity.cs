@@ -3,7 +3,7 @@ namespace CleanArch.Droid.Model
 {
     public class OwnerEntity
     {
-        public OwnerEntity(String login, String avatarUrl)
+        public OwnerEntity(string login, string avatarUrl)
         {
             this.login = login;
             this.avatarUrl = avatarUrl;

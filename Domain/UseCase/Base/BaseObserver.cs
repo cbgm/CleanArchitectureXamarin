@@ -3,7 +3,7 @@ using Core.UI;
 
 namespace Domain.UseCase.Base
 {
-    public abstract class BaseObserver<V, T>: IObserver<T>
+    public abstract class BaseObserver<V, T> : IObserver<T>
     {
         protected V parentsView;
 
@@ -14,17 +14,14 @@ namespace Domain.UseCase.Base
 
         public virtual void OnCompleted()
         {
-
         }
 
         public virtual void OnError(Exception error)
         {
-            throw new NotImplementedException();
         }
 
         public virtual void OnNext(T value)
         {
-            throw new NotImplementedException();
         }
     }
 }

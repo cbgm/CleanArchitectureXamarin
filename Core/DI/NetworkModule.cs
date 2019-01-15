@@ -15,7 +15,7 @@ namespace Core.DI
         }
 
         public T CreateWebService() => RestService.For<T>(
-                   new HttpClient(handler: ProvideHTTPClient())
+                   new HttpClient(ProvideHTTPClient())
                    {
                        BaseAddress = new Uri("https://api.github.com")
                    });

@@ -5,18 +5,15 @@ using Domain.UseCase;
 using Domain.UseCase.Base;
 using Domain.Model;
 using CleanArch.Droid.Mapper;
-using System.Reactive.Concurrency;
-using System.Threading;
 
 namespace Presentation
 {
-    public class MainPresenter<S> : IStartPresenter<S>
+    public class MainPresenter : IStartPresenter
     {
-        private GetReposUseCase<S> getReposUse;
+        private GetReposUseCase getReposUse;
         private IStartView view;
-        private S ioScheduler;
 
-        public MainPresenter(GetReposUseCase<S> getReposUse)
+        public MainPresenter(GetReposUseCase getReposUse)
         {
             this.getReposUse = getReposUse;
         }
@@ -34,14 +31,14 @@ namespace Presentation
 
             public override void OnNext(List<RepoOrganization> value)
             {
-                this.parentsView.ShowRepo(value.ConvertAll(e => RepoOrganizationDomainMapper.transform(e)));
+                this.parentsView.ShowRepo(value.ConvertAll(e => RepoOrganizationDomainMapper.Transform(e)));
             }
         }
 
         public void LoadRepo(string byUser)
         {
-            object[] parameters = {byUser};
-            getReposUse.Execute(new GetReposObserver(view), ioScheduler, parameters);
+            object[] parameters = { byUser };
+            getReposUse.Execute(new GetReposObserver(view), parameters);
         }
 
         public void OnBind()
@@ -59,9 +56,9 @@ namespace Presentation
             this.view = view;
         }
 
-        public void SetUIScheduler(S scheduler)
+        public void SetUIScheduler(object scheduler)
         {
-            this.ioScheduler = scheduler;
+            getReposUse.SetScheduler(scheduler);
         }
     }
 }

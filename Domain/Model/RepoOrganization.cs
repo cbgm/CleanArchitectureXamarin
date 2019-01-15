@@ -17,7 +17,7 @@ namespace Domain.Model
         public string language { get; set; }
 
         [JsonProperty(PropertyName = "html_url")]
-        public string html_url { get; set; }
+        public string htmlUrl { get; set; }
 
         [JsonProperty(PropertyName = "owner")]
         public Owner owner { get; set; }

@@ -8,6 +8,7 @@ using Data.Repository;
 using Data.Repository.DataSource;
 using Autofac;
 using Presentation;
+using ReactiveUI;
 
 namespace CleanArch.iOS
 {

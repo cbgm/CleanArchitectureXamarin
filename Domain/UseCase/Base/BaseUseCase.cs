@@ -2,7 +2,6 @@
 using System.Reactive.Linq;
 using System.Reactive.Concurrency;
 using System.Threading.Tasks;
-using System.Threading;
 using Core.Util;
 
 namespace Domain.UseCase.Base
@@ -10,15 +9,16 @@ namespace Domain.UseCase.Base
     public abstract class BaseUseCase<T>
     {
         private IDisposable disposable;
+        private object scheduler;
 
         protected abstract IObservable<T> BuildUseCaseObserable(params object[] p);
 
-        public void Execute<S>(IObserver<T> observer, S scheduler, params object[] parameters)
+        public void Execute(IObserver<T> observer, params object[] parameters)
         {
             Dispose();
             IObservable<T> observable = BuildUseCaseObserable(parameters)
                     .SubscribeOn(new TaskPoolScheduler(new TaskFactory()))
-                    .ObserveOnWith(scheduler);
+                    .ObserveOnWith(this.scheduler);
             if (observable != null)
             {
                 disposable = observable.Subscribe(observer);
@@ -31,6 +31,11 @@ namespace Domain.UseCase.Base
             {
                 disposable.Dispose();
             }
+        }
+
+        public void SetScheduler(object scheduler)
+        {
+            this.scheduler = scheduler;
         }
     }
 }

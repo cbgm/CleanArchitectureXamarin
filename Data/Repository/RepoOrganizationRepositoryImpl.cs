@@ -6,16 +6,16 @@ using Domain.Repository;
 
 namespace Data.Repository
 {
-    public class RepositoryImpl: IRepository
+    public class RepositoryImpl: IRepoOrganizationRepository
     {
-        readonly IDataSource repoStore;
+        private IDataSource repoStore;
 
         public RepositoryImpl(IDataSource repoStore)
         {
             this.repoStore = repoStore;
         }
 
-        public IObservable<List<RepoOrganization>> GetOrganizationRepos(string orgName)
+        public IObservable<List<RepoOrganization>> GetOrganizationReposByName(string orgName)
         {
             return repoStore.FetchItems(orgName);
         }

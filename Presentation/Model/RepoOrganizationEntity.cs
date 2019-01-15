@@ -1,15 +1,14 @@
-﻿using System;
-namespace CleanArch.Droid.Model
+﻿namespace CleanArch.Droid.Model
 {
     public class RepoOrganizationEntity
     {
-        public RepoOrganizationEntity(int id, string name, string description, string language, string html_url, OwnerEntity owner)
+        public RepoOrganizationEntity(int id, string name, string description, string language, string htmlUrl, OwnerEntity owner)
         {
             this.id = id;
             this.name = name;
             this.description = description;
             this.language = language;
-            this.html_url = html_url;
+            this.htmlUrl = htmlUrl;
             this.owner = owner;
         }
 
@@ -21,7 +20,7 @@ namespace CleanArch.Droid.Model
 
         public string language { get; set; }
 
-        public string html_url { get; set; }
+        public string htmlUrl { get; set; }
 
         public OwnerEntity owner { get; set; }
     }

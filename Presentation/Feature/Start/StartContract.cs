@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CleanArch.Droid.Model;
 using Core.UI;
 
@@ -10,7 +9,7 @@ namespace CleanArch.Droid.Feature.Start
         void ShowRepo(List<RepoOrganizationEntity> repos);
     }
 
-    public interface IStartPresenter<S> : IBasePresenter<IStartView, S>
+    public interface IStartPresenter : IBasePresenter<IStartView>
     {
         void LoadRepo(string byUser);
     }
