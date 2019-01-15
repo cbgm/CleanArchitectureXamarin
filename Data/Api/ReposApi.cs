@@ -5,7 +5,7 @@ using Refit;
 
 namespace Data.Api
 {
-    public interface IGithubApi
+    public interface ReposApi
     {
         [Headers("User-Agent: Xamarin Demo App")]
         [Get("/orgs/{orgName}/repos")]
@@ -16,8 +16,8 @@ namespace Data.Api
         );
     }
 
-    public interface IApiFactory<T>
+    /*public interface IApiFactory<T>
     {
         T Create();
-    }
+    }*/
 }

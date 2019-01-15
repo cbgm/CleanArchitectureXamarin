@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace data
+namespace Data
 {
     public class Class1
     {

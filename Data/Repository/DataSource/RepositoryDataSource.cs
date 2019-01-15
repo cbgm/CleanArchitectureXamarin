@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using Data.Api;
 using Domain.Model;
 
-namespace Data.Repository.RepositoryDataSource
+namespace Data.Repository.DataSource
 {
     public class RepositoryDataSource: IDataSource
     {
-        private IGithubApi api;
+        private ReposApi api;
         private int defaultPage = 1;
         private int perPage = 10;
 
 
-        public RepositoryDataSource(IGithubApi api)
+        public RepositoryDataSource(ReposApi api)
         {
             this.api = api;
         }

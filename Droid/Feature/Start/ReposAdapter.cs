@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using Domain.Model;
+using CleanArch.Droid.Model;
 using static Android.Support.V7.Widget.RecyclerView;
 
-namespace CleanArch.Droid.View.Start
+namespace CleanArch.Droid.Feature.Start
 {
     public class ReposAdapter : RecyclerView.Adapter
     {
-        private List<RepoOrganization> ItemsList = new List<RepoOrganization>();
+        private List<RepoOrganizationEntity> ItemsList = new List<RepoOrganizationEntity>();
 
         public override int ItemCount => ItemsList.Count;
        
 
-        public void addItems(List<RepoOrganization> items)
+        public void addItems(List<RepoOrganizationEntity> items)
         {
             ItemsList.AddRange(items);
             NotifyDataSetChanged();
@@ -61,7 +61,7 @@ namespace CleanArch.Droid.View.Start
 
             }
 
-            public void bindData(RepoOrganization data)
+            public void bindData(RepoOrganizationEntity data)
             {
                 tvOrg.Text = data.owner.login;
                 tvRepo.Text = data.name;

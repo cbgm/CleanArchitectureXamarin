@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Domain.Model;
 
-namespace Data.Repository.IDataSource
+namespace Data.Repository.DataSource
 {
     public interface IDataSource
     {
