@@ -202,7 +202,7 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\layout\item_repo.axml" />
-    <AndroidResource Include="Resources\layout\main_activity.axml" />
+    <AndroidResource Include="Resources\layout\activity_main.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Feature\" />

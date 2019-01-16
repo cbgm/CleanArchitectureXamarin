@@ -44,7 +44,6 @@ namespace iOS.Feature.Start
 
             using (var scope = Injector.Instance.InjectableContainer.BeginLifetimeScope())
             {
-                //reposUseCase = scope.Resolve<GetReposUseCase>();
                 presenter = scope.Resolve<MainPresenter>();
             }
             presenter.SetUIScheduler(new NSRunloopScheduler());
@@ -56,19 +55,6 @@ namespace iOS.Feature.Start
 
             btn_load.TouchUpInside += delegate
             {
-                /*Disposable = reposUseCase
-                    .Get("jetruby")
-                    .SubscribeOn(ThreadPoolScheduler.Instance)
-                    .ObserveOn(new NSRunloopScheduler())
-                    .Subscribe(
-                        list =>
-                        {
-                            table_repos.Source = new RepoTableSource(list);
-                            table_repos.ReloadData();
-                        },
-                        error => { },
-                        () => { }
-                    );*/
                 presenter.LoadRepo("jetruby");
             };
         }

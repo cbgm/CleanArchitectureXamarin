@@ -2233,8 +2233,8 @@ namespace Droid
 			// aapt resource value: 0x7f070032
 			public const int bottom = 2131165234;
 			
-			// aapt resource value: 0x7f07008c
-			public const int btnLoad = 2131165324;
+			// aapt resource value: 0x7f070085
+			public const int btnLoad = 2131165317;
 			
 			// aapt resource value: 0x7f07005a
 			public const int buttonPanel = 2131165274;
@@ -2293,8 +2293,8 @@ namespace Droid
 			// aapt resource value: 0x7f070015
 			public const int disableHome = 2131165205;
 			
-			// aapt resource value: 0x7f07008b
-			public const int divider = 2131165323;
+			// aapt resource value: 0x7f07008d
+			public const int divider = 2131165325;
 			
 			// aapt resource value: 0x7f070077
 			public const int edit_query = 2131165303;
@@ -2428,8 +2428,8 @@ namespace Droid
 			// aapt resource value: 0x7f070093
 			public const int right_side = 2131165331;
 			
-			// aapt resource value: 0x7f07008d
-			public const int rvRepos = 2131165325;
+			// aapt resource value: 0x7f070086
+			public const int rvRepos = 2131165318;
 			
 			// aapt resource value: 0x7f07001e
 			public const int screen = 2131165214;
@@ -2563,23 +2563,23 @@ namespace Droid
 			// aapt resource value: 0x7f070065
 			public const int topPanel = 2131165285;
 			
-			// aapt resource value: 0x7f070088
-			public const int tv_description = 2131165320;
-			
 			// aapt resource value: 0x7f07008a
-			public const int tv_label_language = 2131165322;
+			public const int tv_description = 2131165322;
 			
-			// aapt resource value: 0x7f070086
-			public const int tv_label_owner = 2131165318;
+			// aapt resource value: 0x7f07008c
+			public const int tv_label_language = 2131165324;
 			
-			// aapt resource value: 0x7f070089
-			public const int tv_language = 2131165321;
+			// aapt resource value: 0x7f070088
+			public const int tv_label_owner = 2131165320;
 			
-			// aapt resource value: 0x7f070085
-			public const int tv_org = 2131165317;
+			// aapt resource value: 0x7f07008b
+			public const int tv_language = 2131165323;
 			
 			// aapt resource value: 0x7f070087
-			public const int tv_repo = 2131165319;
+			public const int tv_org = 2131165319;
+			
+			// aapt resource value: 0x7f070089
+			public const int tv_repo = 2131165321;
 			
 			// aapt resource value: 0x7f070022
 			public const int uniform = 2131165218;
@@ -2725,10 +2725,10 @@ namespace Droid
 			public const int abc_tooltip = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
-			public const int item_repo = 2130968604;
+			public const int activity_main = 2130968604;
 			
 			// aapt resource value: 0x7f04001d
-			public const int main_activity = 2130968605;
+			public const int item_repo = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
 			public const int notification_action = 2130968606;

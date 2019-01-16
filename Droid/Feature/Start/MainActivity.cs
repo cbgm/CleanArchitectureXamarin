@@ -22,7 +22,7 @@ namespace Droid.Feature.Start
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.main_activity);
+            SetContentView(Resource.Layout.activity_main);
             InitViews();
 
             using (var scope = Injector.Instance.InjectableContainer.BeginLifetimeScope())

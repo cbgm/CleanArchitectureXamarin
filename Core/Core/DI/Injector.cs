@@ -23,7 +23,6 @@ namespace Core.Core.DI
             }
         }
 
-        //Array of injectors with init method returning builder
         public void Init(List<IComponent> components)
         {
             var builder = new ContainerBuilder();
