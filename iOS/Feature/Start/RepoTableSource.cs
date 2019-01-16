@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using CleanArch.Droid.Model;
-using Domain.Model;
+using Core.Presentation.Model;
 using Foundation;
 using UIKit;
 
-namespace CleanArch.iOS.Feature.Main
+namespace iOS.Feature.Start
 {
     public class RepoTableSource : UITableViewSource
     {

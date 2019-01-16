@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using CleanArch.Droid.Model;
+using Core.Presentation.Model;
 using static Android.Support.V7.Widget.RecyclerView;
 
-namespace CleanArch.Droid.Feature.Start
+namespace Droid.Feature.Start
 {
     public class ReposAdapter : RecyclerView.Adapter
     {

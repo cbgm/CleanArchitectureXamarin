@@ -1,24 +1,17 @@
 ﻿using System;
 using Autofac;
-using Domain.UseCase;
 using UIKit;
-using Foundation;
-using System.Reactive.Concurrency;
-using System.Reactive.Linq;
-using System.Threading.Tasks;
 using ReactiveUI;
-using Presentation;
-using CleanArch.Droid.Feature.Start;
-using CleanArch.Droid.Model;
 using System.Collections.Generic;
+using Core.Presentation.Feature.Start;
+using Core.Presentation.Model;
+using Core.Core.DI;
 
-namespace CleanArch.iOS.Feature.Main
+namespace iOS.Feature.Start
 {
     public partial class MainViewController : UIViewController, IStartView
     {
         MainPresenter presenter;
-        //IDisposable Disposable;
-        //GetReposUseCase reposUseCase;
 
         public MainViewController(IntPtr handle) : base(handle)
         {
@@ -49,7 +42,7 @@ namespace CleanArch.iOS.Feature.Main
         {
             base.ViewDidLoad();
 
-            using (var scope = AppDelegate.Container.BeginLifetimeScope())
+            using (var scope = Injector.Instance.InjectableContainer.BeginLifetimeScope())
             {
                 //reposUseCase = scope.Resolve<GetReposUseCase>();
                 presenter = scope.Resolve<MainPresenter>();

@@ -1,10 +1,9 @@
 ﻿using System;
-using CleanArch.Droid.Model;
-using Domain.Model;
+using Core.Presentation.Model;
 using Foundation;
 using UIKit;
 
-namespace CleanArch.iOS.Feature.Main
+namespace iOS.Feature.Start
 {
     public partial class RepoCell : UITableViewCell
     {

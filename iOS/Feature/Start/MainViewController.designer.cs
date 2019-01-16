@@ -8,7 +8,7 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 
-namespace CleanArch.iOS.Feature.Main
+namespace iOS.Feature.Start
 {
     [Register ("MainViewController")]
     partial class MainViewController

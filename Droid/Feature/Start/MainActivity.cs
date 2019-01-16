@@ -2,24 +2,19 @@
 using Android.Widget;
 using Android.OS;
 using Android.Support.V7.Widget;
-using Domain.UseCase;
 using Autofac;
 using System;
-//using System.Reactive.Linq;
-//using System.Reactive.Concurrency;
-using System.Threading.Tasks;
-using Java.Lang;
-using Presentation;
-using CleanArch.Droid.Model;
 using System.Collections.Generic;
-using System.Threading;
+using Core.Presentation.Feature.Start;
+using Core.Presentation.Model;
+using Core.Core.DI;
 
-namespace CleanArch.Droid.Feature.Start
+namespace Droid.Feature.Start
 {
     [Activity(Label = "CleanArch", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity, IStartView
     {
-        MainPresenter presenter;
+        MainPresenter presenter;// = new MainPresenter();
         RecyclerView RvRepos;
         ReposAdapter Adapter;
         Button button;
@@ -30,7 +25,7 @@ namespace CleanArch.Droid.Feature.Start
             SetContentView(Resource.Layout.main_activity);
             InitViews();
 
-            using (var scope = App.Container.BeginLifetimeScope())
+            using (var scope = Injector.Instance.InjectableContainer.BeginLifetimeScope())
             {
                 presenter = scope.Resolve<MainPresenter>();
             }
