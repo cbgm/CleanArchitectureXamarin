@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch", "CleanArch\Clea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.Droid", "Droid\Presentation.Droid.csproj", "{F18A7AB9-3A16-436B-AB1C-D98A56F1746D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.IOS", "iOS\Presentation.iOS.csproj", "{9E4FFA37-FCF1-4A1C-98D4-C0C794A025B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.iOS", "iOS\Presentation.iOS.csproj", "{9E4FFA37-FCF1-4A1C-98D4-C0C794A025B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{3B0A12FD-C164-44E3-A2BD-0E2ABDD26CCC}"
 EndProject
