@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Core.Core.Util
 {
-    public static class ThreadExtensions
+    public static class ReactiveExtensions
     {
 
         public static IObservable<T> ObserveOnWith<T, S>(this IObservable<T> it, S scheduler)
